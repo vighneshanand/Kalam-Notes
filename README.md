@@ -1,6 +1,7 @@
 # Kalam Notes (कलम)
 
-> **Turn lectures and mentor sessions into handwritten notebook pages you can verify against what was spoken.**
+> **Turn lectures and mentor sessions into handwritten notebook pages you can verify against what was spoken.**  
+> *Built using Google AI Studio.*
 
 Kalam Notes is an intelligent lecture transcription and structured notebook application designed to transcribe spoken dialogue and transform sessions into handwritten-style digital notes with verifiable audio citations.
 
@@ -9,7 +10,9 @@ Kalam Notes is an intelligent lecture transcription and structured notebook appl
 ## 📖 Table of Contents
 
 - [Overview](#overview)
+- [📸 Snapshots](#-snapshots)
 - [Key Features](#key-features)
+- [🛠️ Technology Stack](#️-technology-stack)
 - [Handwritten Notes Interface](#handwritten-notes-interface)
 - [Environment Configuration](#environment-configuration)
 - [Getting Started](#getting-started)
@@ -29,6 +32,25 @@ Attending fast-paced lectures, workshops, or mentor calls often makes it difficu
 
 ---
 
+## 📸 Snapshots
+
+### 1. New Session Creation & Consent
+Configure session metadata, choose language settings, confirm explicit speaker consent, and record audio live with waveform feedback or upload existing recordings.
+
+![New Session Setup](new_session_kalam_notes.png)
+
+### 2. Structured Knowledge Buckets
+Browse topics with synchronized timestamp navigation and citation cards backed by word-for-word transcript references.
+
+![Knowledge Buckets View](bucket_kalam_notes.png)
+
+### 3. Handwritten Notebook Pages
+Review authentic notebook pages rendered with ruled line paper, cursive handwriting, boxed formulas, and margin sticky notes.
+
+![Handwritten Notes View](notes_kalam.png)
+
+---
+
 ## 🌟 Key Features
 
 - **Audio Capture & Ingestion:** In-browser audio recording with real-time waveform feedback, or audio file upload.
@@ -36,6 +58,20 @@ Attending fast-paced lectures, workshops, or mentor calls often makes it difficu
 - **Synchronized Audio Player:** Scrubbable timeline with topic checkpoints, active speaker display, and one-tap timestamp seeking.
 - **Interactive Editing:** Edit topics and notes directly on the page, with automatic persistence.
 - **Export Options:** Export notebook pages as print-ready PDF or high-resolution images.
+
+---
+
+## 🛠️ Technology Stack
+
+An overview of the core technologies powering the application:
+
+- **AI & Speech Recognition:** 
+  - **Google Gemini** for intelligent topic extraction, note structuring, and transcript verification.
+  - **Sarvam AI** for multilingual speech-to-text supporting Indian languages and Hinglish speech.
+- **Frontend:** React 19, TypeScript, Tailwind CSS, Rough.js, and Rough Notation for authentic hand-drawn graphics.
+- **Backend Services:** Node.js Express server gateway coupled with a high-performance Python REST service.
+- **Database & Identity:** Relational database storage (SQLite) paired with Firebase Authentication and Cloud Firestore for secure data isolation.
+- **Development Platform:** Built using **Google AI Studio**.
 
 ---
 
