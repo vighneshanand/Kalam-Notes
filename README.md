@@ -37,17 +37,23 @@ Attending fast-paced lectures, workshops, or mentor calls often makes it difficu
 ### 1. New Session Creation & Consent
 Configure session metadata, choose language settings, confirm explicit speaker consent, and record audio live with waveform feedback or upload existing recordings.
 
-![New Session Setup](new_session_kalam_notes.png)
+<p align="center">
+  <img src="new_session_kalam_notes.png" alt="New Session Setup" width="100%" />
+</p>
 
 ### 2. Structured Knowledge Buckets
 Browse topics with synchronized timestamp navigation and citation cards backed by word-for-word transcript references.
 
-![Knowledge Buckets View](bucket_kalam_notes.png)
+<p align="center">
+  <img src="bucket_kalam_notes.png" alt="Knowledge Buckets View" width="100%" />
+</p>
 
 ### 3. Handwritten Notebook Pages
 Review authentic notebook pages rendered with ruled line paper, cursive handwriting, boxed formulas, and margin sticky notes.
 
-![Handwritten Notes View](notes_kalam.png)
+<p align="center">
+  <img src="notes_kalam.png" alt="Handwritten Notes View" width="100%" />
+</p>
 
 ---
 
