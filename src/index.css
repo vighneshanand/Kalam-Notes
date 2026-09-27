@@ -1,0 +1,146 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #F2F3F7;
+  --surface: #FFFFFF;
+  --surface-2: #F7F8FB;
+  --ink: #1A1F33;
+  --muted: #5C6378;
+  --faint: #8A90A3;
+  --line: #DEE1EA;
+  --accent: #2F43B8;
+  --accent-ink: #FFFFFF;
+  --accent-soft: #E7EAFA;
+  --c-k: #2F43B8;
+  --c-k-soft: #EEF0FC;
+  --c-i: #0E7656;
+  --c-i-soft: #E8F5EF;
+  --c-d: #B0521C;
+  --c-d-soft: #FBEFE6;
+  --c-m: #8A6700;
+  --c-m-soft: #FFF6D6;
+  --ok: #0E7656;
+  --warn: #9A5B00;
+  --warn-soft: #FFF1D6;
+  --danger: #B42318;
+  --danger-soft: #FDECEA;
+  --shadow: 0 1px 2px rgba(20, 24, 45, 0.06), 0 6px 20px rgba(20, 24, 45, 0.06);
+  --paper: #FBF8EE;
+  --rule: #C7D3E8;
+  --margin: #E39A96;
+  --pen: #1E2F8C;
+  --red: #B8322A;
+  --pencil: #7D8290;
+  --hand: 'Caveat', 'Segoe Print', cursive;
+  --hs: 25px;
+  --ui: 'Figtree', system-ui, -apple-system, sans-serif;
+  --mono: 'IBM Plex Mono', monospace;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg);
+  color: var(--ink);
+  font-family: var(--ui);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Handwritten ruled notebook page layout */
+.notebook-page {
+  --ml: 62px;
+  --pl: 82px;
+  width: 100%;
+  max-width: 800px;
+  position: relative;
+  color: var(--pen);
+  font-family: var(--hand);
+  font-size: var(--hs);
+  line-height: 34px;
+  padding: 34px 34px 68px var(--pl);
+  border-radius: 3px;
+  background-color: var(--paper);
+  background-image:
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .35 0 0 0 0 .3 0 0 0 0 .2 0 0 0 .09 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>"),
+    linear-gradient(to right, transparent calc(var(--ml) - 1px), var(--margin) calc(var(--ml) - 1px), var(--margin) calc(var(--ml) + 1px), transparent calc(var(--ml) + 1px)),
+    repeating-linear-gradient(to bottom, transparent 0, transparent 33px, var(--rule) 33px, var(--rule) 34px);
+  box-shadow: 0 1px 1px rgba(60, 50, 20, 0.08), 0 12px 30px rgba(40, 40, 70, 0.12);
+}
+
+@media (max-width: 700px) {
+  .notebook-page {
+    --ml: 42px;
+    --pl: 54px;
+    padding-right: 16px;
+  }
+}
+
+/* Yellow sticky notes in notebook margins */
+.sticky-note {
+  background: #FFE98A;
+  color: #3D3413;
+  padding: 12px 14px 14px;
+  font-family: var(--hand);
+  font-size: calc(var(--hs) * 0.82);
+  line-height: 1.25;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08), 0 8px 14px rgba(80, 60, 0, 0.18);
+  position: relative;
+}
+
+.sticky-note::before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  width: 60px;
+  height: 16px;
+  margin-left: -30px;
+  background: rgba(255, 255, 255, 0.6);
+  transform: rotate(-3deg);
+}
+
+/* Static fallback highlight and boxes when canvas is settling */
+.hl-mark {
+  background: linear-gradient(transparent 40%, rgba(255, 208, 0, 0.45) 40%, rgba(255, 208, 0, 0.45) 88%, transparent 88%);
+}
+
+.fx-box {
+  outline: 2px solid var(--pen);
+  outline-offset: 3px;
+  border-radius: 4px;
+  padding: 0 8px;
+}
+
+/* Recorder animations */
+@keyframes barPulse {
+  0%, 100% { height: 6px; }
+  50% { height: 36px; }
+}
+
+.rec-bar {
+  width: 4px;
+  height: 6px;
+  border-radius: 2px;
+  background: #DEE1EA;
+  transition: height 0.2s ease;
+}
+
+.rec-bar.active {
+  background: #D93A2B;
+  animation: barPulse 0.9s ease-in-out infinite;
+}
+
+@keyframes recBlink {
+  50% { opacity: 0.2; }
+}
+
+.rec-blink {
+  animation: recBlink 1s infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}

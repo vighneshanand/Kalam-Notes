@@ -1,0 +1,6 @@
+{
+  "name": "Kalam Notes",
+  "description": "Lecture to handwritten notes with structured knowledge buckets, timestamps, and diagram generation.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,55 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "User profile with preference settings and quota tracking",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "email": { "type": "string" },
+        "displayName": { "type": "string" },
+        "avatarInitials": { "type": "string" },
+        "preferredNotesLang": { "type": "string" },
+        "dailyMinutesUsed": { "type": "number" },
+        "dailyQuotaMinutes": { "type": "number" },
+        "saveToDrive": { "type": "boolean" },
+        "createdAt": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["email", "displayName"]
+    },
+    "Session": {
+      "title": "Session",
+      "description": "Recorded lecture or mentor call session with notes and transcription references",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "title": { "type": "string" },
+        "speaker": { "type": "string" },
+        "role": { "type": "string" },
+        "sessionDate": { "type": "string" },
+        "durationSeconds": { "type": "number" },
+        "durationFormatted": { "type": "string" },
+        "spokenLanguage": { "type": "string" },
+        "notesLanguage": { "type": "string" },
+        "consentConfirmed": { "type": "boolean" },
+        "consentTimestamp": { "type": "string" },
+        "status": { "type": "string" },
+        "createdAt": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["userId", "title", "speaker", "consentConfirmed"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "User",
+      "description": "Stores user profile and account preferences"
+    },
+    "/users/{userId}/sessions/{sessionId}": {
+      "schema": "Session",
+      "description": "Stores user sessions with notes and transcripts"
+    }
+  }
+}
